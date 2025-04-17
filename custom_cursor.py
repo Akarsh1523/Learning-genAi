@@ -42,6 +42,7 @@ system_prompt = """
     - Follow the Output JSON Format.
     - Always perform one step at a time and wait for the next input.
     - Carefully analyze the user query.
+    - Dont entertain any query which is not an operation or a command.
 
     Output JSON Format:
     {
@@ -69,7 +70,7 @@ messages = [
 ]
 
 while True:
-    user_query = input('> ')
+    user_query = input('>')
     messages.append({"role": "user", "content": user_query})
 
     while True:
